@@ -1,3 +1,6 @@
+/*
+ * C++ utility to convert a PPM image from circular fisheye into rectilinear projection
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -64,8 +67,8 @@ int main(int argc, char *argv[])
     for (int x = 0; x < circum; x++) {
       double theta = -1.0 * x / maxmag;       // -(x * 2.0 * M_PI / width);
       double mag = maxmag - y;                // y * 1.0 * maxmag / height;
-      int targety = (int) (midy + mag * cos(theta));
-      int targetx = (int) (midx + mag * sin(theta));
+      int targety = lrint(midy + mag * cos(theta));
+      int targetx = lrint(midx + mag * sin(theta));
       if (targety < 0 || targety >= height || targetx < 0 || targetx >= width) {
         fwrite(black, 1, 3, stdout);
       } else {

@@ -1,12 +1,21 @@
-defish
-======
+defish-ppm
+==========
 
-Algorithmic correction of fisheye lens distortion
+Algorithmic correction of fisheye lens distortion, written in the style of a NetPBM graphics tool.
+
+It takes no command-line arguments, and reads the image from from stdin. As with NetPBM-style utilities, you will likely need to combine other utilities to convert to/from the ppm format or do any additional image processing steps that you require.
+
+    jpegtopnm capture.jpg | defish-ppm | pnmtojpeg defish.jpg
 
 
 
-Other interesting panorama projects:
 
+
+
+Other interesting projects
+--------------------------
+
+* NetPBM tools - http://netpbm.sourceforge.net/
 * Hugin stitching software – http://hugin.sf.net/
 * Hugin tutorial on creating architectural projection – a good reference for creating vertical lines – http://hugin.sourceforge.net/tutorials/architectural/
 * Panini panorama viewer – https://sourceforge.net/projects/pvqt/
